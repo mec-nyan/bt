@@ -628,6 +628,55 @@ const UPPERCASE_Z: Letter = [
     "        ",
 ];
 
+// Put here punctuation and symbols i.e. $, #, @ etc.
+#[rustfmt::skip]
+const SPACE: Letter = [
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+];
+
+#[rustfmt::skip]
+const PERIOD: Letter = [
+    "  ",
+    "  ",
+    "  ",
+    "  ",
+    "@@",
+    "@@",
+    "  ",
+    "  ",
+];
+
+#[rustfmt::skip]
+const QUESTION_MARK: Letter = [
+    "        ",
+    "  @@@@  ",
+    "@@    @@",
+    "     @@ ",
+    "   @@   ",
+    "        ",
+    "   @@   ",
+    "        ",
+];
+
+#[rustfmt::skip]
+pub const UNKNOWN: Letter = [
+    "  @@@@@@  ",
+    "@@@    @@@",
+    "@  @@@@  @",
+    "@@@@@@  @@",
+    "@@@@  @@@@",
+    "@@@@@@@@@@",
+    "@@@@  @@@@",
+    "  @@@@@@  ",
+];
+
 pub fn get_symbols() -> HashMap<char, Letter> {
     HashMap::from([
         //
@@ -688,5 +737,11 @@ pub fn get_symbols() -> HashMap<char, Letter> {
         ('X', UPPERCASE_X),
         ('Y', UPPERCASE_Y),
         ('Z', UPPERCASE_Z),
+        //
+        // Punctuation & other glyphs.
+        //
+        (' ', SPACE),
+        ('.', PERIOD),
+        ('?', QUESTION_MARK),
     ])
 }
