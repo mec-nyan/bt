@@ -1,5 +1,9 @@
+use std::collections::HashMap;
+
+type Letter = [&'static str; 8];
+
 #[rustfmt::skip]
-const A_LOWERCASE: [&str; 8] = [
+const LOWERCASE_A: Letter = [
     "        ",
     "@@@@@@@@",
     "      @@",
@@ -11,7 +15,7 @@ const A_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const B_LOWERCASE: [&str; 8] = [
+const LOWERCASE_B: Letter = [
     "@@      ",
     "@@@@@@@@",
     "@@    @@",
@@ -23,7 +27,7 @@ const B_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const C_LOWERCASE: [&str; 8] = [
+const LOWERCASE_C: Letter = [
     "        ",
     "@@@@@@@@",
     "@@      ",
@@ -35,7 +39,7 @@ const C_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const D_LOWERCASE: [&str; 8] = [
+const LOWERCASE_D: Letter = [
     "      @@",
     "@@@@@@@@",
     "@@    @@",
@@ -47,7 +51,7 @@ const D_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const E_LOWERCASE: [&str; 8] = [
+const LOWERCASE_E: Letter = [
     "        ",
     "@@@@@@@@",
     "@@    @@",
@@ -59,7 +63,7 @@ const E_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const F_LOWERCASE: [&str; 8] = [
+const LOWERCASE_F: Letter = [
     "  @@",
     "@@  ",
     "@@@@",
@@ -71,7 +75,7 @@ const F_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const G_LOWERCASE: [&str; 8] = [
+const LOWERCASE_G: Letter = [
     "        ",
     "@@@@@@@@",
     "@@    @@",
@@ -83,7 +87,7 @@ const G_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const H_LOWERCASE: [&str; 8] = [
+const LOWERCASE_H: Letter = [
     "@@      ",
     "@@@@@@  ",
     "@@    @@",
@@ -95,7 +99,7 @@ const H_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const I_LOWERCASE: [&str; 8] = [
+const LOWERCASE_I: Letter = [
     "@@",
     "  ",
     "@@",
@@ -107,7 +111,7 @@ const I_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const J_LOWERCASE: [&str; 8] = [
+const LOWERCASE_J: Letter = [
     "  @@",
     "    ",
     "  @@",
@@ -119,7 +123,7 @@ const J_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const K_LOWERCASE: [&str; 8] = [
+const LOWERCASE_K: Letter = [
     "@@      ",
     "@@    @@",
     "@@@@@@  ",
@@ -131,7 +135,7 @@ const K_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const L_LOWERCASE: [&str; 8] = [
+const LOWERCASE_L: Letter = [
     "@@",
     "@@",
     "@@",
@@ -143,7 +147,7 @@ const L_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const M_LOWERCASE: [&str; 8] = [
+const LOWERCASE_M: Letter = [
     "          ",
     "@@@@@@@@  ",
     "@@  @@  @@",
@@ -155,7 +159,7 @@ const M_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const N_LOWERCASE: [&str; 8] = [
+const LOWERCASE_N: Letter = [
     "        ",
     "@@@@@@  ",
     "@@    @@",
@@ -167,7 +171,7 @@ const N_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const O_LOWERCASE: [&str; 8] = [
+const LOWERCASE_O: Letter = [
     "        ",
     "@@@@@@@@",
     "@@    @@",
@@ -179,7 +183,7 @@ const O_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const P_LOWERCASE: [&str; 8] = [
+const LOWERCASE_P: Letter = [
     "        ",
     "@@@@@@@@",
     "@@    @@",
@@ -191,7 +195,7 @@ const P_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const Q_LOWERCASE: [&str; 8] = [
+const LOWERCASE_Q: Letter = [
     "        ",
     "@@@@@@@@",
     "@@    @@",
@@ -203,7 +207,7 @@ const Q_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const R_LOWERCASE: [&str; 8] = [
+const LOWERCASE_R: Letter = [
     "      ",
     "@@@@@@",
     "@@    ",
@@ -215,7 +219,7 @@ const R_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const S_LOWERCASE: [&str; 8] = [
+const LOWERCASE_S: Letter = [
     "        ",
     "@@@@@@@@",
     "@@      ",
@@ -227,7 +231,7 @@ const S_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const T_LOWERCASE: [&str; 8] = [
+const LOWERCASE_T: Letter = [
     "  @@  ",
     "@@@@@@",
     "  @@  ",
@@ -239,7 +243,7 @@ const T_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const U_LOWERCASE: [&str; 8] = [
+const LOWERCASE_U: Letter = [
     "        ",
     "@@    @@",
     "@@    @@",
@@ -251,7 +255,7 @@ const U_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const V_LOWERCASE: [&str; 8] = [
+const LOWERCASE_V: Letter = [
     "        ",
     "@@    @@",
     "@@    @@",
@@ -263,7 +267,7 @@ const V_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const W_LOWERCASE: [&str; 8] = [
+const LOWERCASE_W: Letter = [
     "          ",
     "@@  @@  @@",
     "@@  @@  @@",
@@ -275,7 +279,7 @@ const W_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const X_LOWERCASE: [&str; 8] = [
+const LOWERCASE_X: Letter = [
     "        ",
     "@@    @@",
     "@@    @@",
@@ -287,7 +291,7 @@ const X_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const Y_LOWERCASE: [&str; 8] = [
+const LOWERCASE_Y: Letter = [
     "        ",
     "@@    @@",
     "@@    @@",
@@ -299,7 +303,7 @@ const Y_LOWERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const Z_LOWERCASE: [&str; 8] = [
+const LOWERCASE_Z: Letter = [
     "        ",
     "@@@@@@@@",
     "      @@",
@@ -313,7 +317,7 @@ const Z_LOWERCASE: [&str; 8] = [
 // Uppercase.
 
 #[rustfmt::skip]
-const A_UPPERCASE: [&str; 8] = [
+const UPPERCASE_A: Letter = [
     "@@@@@@@@",
     "@@    @@",
     "@@    @@",
@@ -325,7 +329,7 @@ const A_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const B_UPPERCASE: [&str; 8] = [
+const UPPERCASE_B: Letter = [
     "@@@@@@  ",
     "@@  @@  ",
     "@@@@@@@@",
@@ -337,7 +341,7 @@ const B_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const C_UPPERCASE: [&str; 8] = [
+const UPPERCASE_C: Letter = [
     "@@@@@@@@",
     "@@      ",
     "@@      ",
@@ -349,7 +353,7 @@ const C_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const D_UPPERCASE: [&str; 8] = [
+const UPPERCASE_D: Letter = [
     "@@@@@@  ",
     "@@    @@",
     "@@    @@",
@@ -361,7 +365,7 @@ const D_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const E_UPPERCASE: [&str; 8] = [
+const UPPERCASE_E: Letter = [
     "@@@@@@@@",
     "@@      ",
     "@@@@@@  ",
@@ -373,7 +377,7 @@ const E_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const F_UPPERCASE: [&str; 8] = [
+const UPPERCASE_F: Letter = [
     "@@@@@@@@",
     "@@      ",
     "@@@@@@  ",
@@ -385,7 +389,7 @@ const F_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const G_UPPERCASE: [&str; 8] = [
+const UPPERCASE_G: Letter = [
     "@@@@@@@@",
     "@@      ",
     "@@      ",
@@ -397,7 +401,7 @@ const G_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const H_UPPERCASE: [&str; 8] = [
+const UPPERCASE_H: Letter = [
     "@@    @@",
     "@@    @@",
     "@@@@@@@@",
@@ -409,7 +413,7 @@ const H_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const I_UPPERCASE: [&str; 8] = [
+const UPPERCASE_I: Letter = [
     "@@@@",
     " @@ ",
     " @@ ",
@@ -421,7 +425,7 @@ const I_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const J_UPPERCASE: [&str; 8] = [
+const UPPERCASE_J: Letter = [
     "      @@",
     "      @@",
     "      @@",
@@ -433,7 +437,7 @@ const J_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const K_UPPERCASE: [&str; 8] = [
+const UPPERCASE_K: Letter = [
     "@@    @@",
     "@@    @@",
     "@@@@@@  ",
@@ -445,7 +449,7 @@ const K_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const L_UPPERCASE: [&str; 8] = [
+const UPPERCASE_L: Letter = [
     "@@      ",
     "@@      ",
     "@@      ",
@@ -457,7 +461,7 @@ const L_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const M_UPPERCASE: [&str; 8] = [
+const UPPERCASE_M: Letter = [
     "@@@@  @@@@",
     "@@  @@  @@",
     "@@  @@  @@",
@@ -469,7 +473,7 @@ const M_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const N_UPPERCASE: [&str; 8] = [
+const UPPERCASE_N: Letter = [
     "@@      @@",
     "@@@@    @@",
     "@@  @@  @@",
@@ -481,7 +485,7 @@ const N_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const O_UPPERCASE: [&str; 8] = [
+const UPPERCASE_O: Letter = [
     "@@@@@@@@",
     "@@    @@",
     "@@    @@",
@@ -493,7 +497,7 @@ const O_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const P_UPPERCASE: [&str; 8] = [
+const UPPERCASE_P: Letter = [
     "@@@@@@@@",
     "@@    @@",
     "@@    @@",
@@ -505,7 +509,7 @@ const P_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const Q_UPPERCASE: [&str; 8] = [
+const UPPERCASE_Q: Letter = [
     "@@@@@@@@  ",
     "@@    @@  ",
     "@@    @@  ",
@@ -517,7 +521,7 @@ const Q_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const R_UPPERCASE: [&str; 8] = [
+const UPPERCASE_R: Letter = [
     "@@@@@@  ",
     "@@    @@",
     "@@    @@",
@@ -529,7 +533,7 @@ const R_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const S_UPPERCASE: [&str; 8] = [
+const UPPERCASE_S: Letter = [
     "@@@@@@@@",
     "@@      ",
     "@@@@@@@@",
@@ -541,7 +545,7 @@ const S_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const T_UPPERCASE: [&str; 8] = [
+const UPPERCASE_T: Letter = [
     "@@@@@@@@",
     "   @@   ",
     "   @@   ",
@@ -553,7 +557,7 @@ const T_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const U_UPPERCASE: [&str; 8] = [
+const UPPERCASE_U: Letter = [
     "@@    @@",
     "@@    @@",
     "@@    @@",
@@ -565,7 +569,7 @@ const U_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const V_UPPERCASE: [&str; 8] = [
+const UPPERCASE_V: Letter = [
     "@@    @@",
     "@@    @@",
     "@@    @@",
@@ -577,7 +581,7 @@ const V_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const W_UPPERCASE: [&str; 8] = [
+const UPPERCASE_W: Letter = [
     "@@   @@   @@",
     "@@   @@   @@",
     "@@   @@   @@",
@@ -589,7 +593,7 @@ const W_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const X_UPPERCASE: [&str; 8] = [
+const UPPERCASE_X: Letter = [
     "@@    @@",
     "@@    @@",
     "  @@@@  ",
@@ -601,7 +605,7 @@ const X_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const Y_UPPERCASE: [&str; 8] = [
+const UPPERCASE_Y: Letter = [
     "@@    @@",
     "@@    @@",
     "@@    @@",
@@ -613,7 +617,7 @@ const Y_UPPERCASE: [&str; 8] = [
 ];
 
 #[rustfmt::skip]
-const Z_UPPERCASE: [&str; 8] = [
+const UPPERCASE_Z: Letter = [
     "@@@@@@@@",
     "      @@",
     "    @@  ",
@@ -623,3 +627,66 @@ const Z_UPPERCASE: [&str; 8] = [
     "        ",
     "        ",
 ];
+
+pub fn get_symbols() -> HashMap<char, Letter> {
+    HashMap::from([
+        //
+        // Lowercase.
+        //
+        ('a', LOWERCASE_A),
+        ('b', LOWERCASE_B),
+        ('c', LOWERCASE_C),
+        ('d', LOWERCASE_D),
+        ('e', LOWERCASE_E),
+        ('f', LOWERCASE_F),
+        ('g', LOWERCASE_G),
+        ('h', LOWERCASE_H),
+        ('i', LOWERCASE_I),
+        ('j', LOWERCASE_J),
+        ('k', LOWERCASE_K),
+        ('l', LOWERCASE_L),
+        ('m', LOWERCASE_M),
+        ('n', LOWERCASE_N),
+        ('o', LOWERCASE_O),
+        ('p', LOWERCASE_P),
+        ('q', LOWERCASE_Q),
+        ('r', LOWERCASE_R),
+        ('s', LOWERCASE_S),
+        ('t', LOWERCASE_T),
+        ('u', LOWERCASE_U),
+        ('v', LOWERCASE_V),
+        ('w', LOWERCASE_W),
+        ('x', LOWERCASE_X),
+        ('y', LOWERCASE_Y),
+        ('z', LOWERCASE_Z),
+        //
+        // Uppercase.
+        //
+        ('A', UPPERCASE_A),
+        ('B', UPPERCASE_B),
+        ('C', UPPERCASE_C),
+        ('D', UPPERCASE_D),
+        ('E', UPPERCASE_E),
+        ('F', UPPERCASE_F),
+        ('G', UPPERCASE_G),
+        ('H', UPPERCASE_H),
+        ('I', UPPERCASE_I),
+        ('J', UPPERCASE_J),
+        ('K', UPPERCASE_K),
+        ('L', UPPERCASE_L),
+        ('M', UPPERCASE_M),
+        ('N', UPPERCASE_N),
+        ('O', UPPERCASE_O),
+        ('P', UPPERCASE_P),
+        ('Q', UPPERCASE_Q),
+        ('R', UPPERCASE_R),
+        ('S', UPPERCASE_S),
+        ('T', UPPERCASE_T),
+        ('U', UPPERCASE_U),
+        ('V', UPPERCASE_V),
+        ('W', UPPERCASE_W),
+        ('X', UPPERCASE_X),
+        ('Y', UPPERCASE_Y),
+        ('Z', UPPERCASE_Z),
+    ])
+}
