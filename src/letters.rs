@@ -1,9 +1,9 @@
 use std::collections::HashMap;
 
-type Letter = [&'static str; 8];
+type Symbol = [&'static str; 8];
 
 #[rustfmt::skip]
-const LOWERCASE_A: Letter = [
+const LOWERCASE_A: Symbol = [
     "        ",
     "@@@@@@@@",
     "      @@",
@@ -15,7 +15,7 @@ const LOWERCASE_A: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_B: Letter = [
+const LOWERCASE_B: Symbol = [
     "@@      ",
     "@@@@@@@@",
     "@@    @@",
@@ -27,7 +27,7 @@ const LOWERCASE_B: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_C: Letter = [
+const LOWERCASE_C: Symbol = [
     "        ",
     "@@@@@@@@",
     "@@      ",
@@ -39,7 +39,7 @@ const LOWERCASE_C: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_D: Letter = [
+const LOWERCASE_D: Symbol = [
     "      @@",
     "@@@@@@@@",
     "@@    @@",
@@ -51,7 +51,7 @@ const LOWERCASE_D: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_E: Letter = [
+const LOWERCASE_E: Symbol = [
     "        ",
     "@@@@@@@@",
     "@@    @@",
@@ -63,7 +63,7 @@ const LOWERCASE_E: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_F: Letter = [
+const LOWERCASE_F: Symbol = [
     "  @@",
     "@@  ",
     "@@@@",
@@ -75,7 +75,7 @@ const LOWERCASE_F: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_G: Letter = [
+const LOWERCASE_G: Symbol = [
     "        ",
     "@@@@@@@@",
     "@@    @@",
@@ -87,7 +87,7 @@ const LOWERCASE_G: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_H: Letter = [
+const LOWERCASE_H: Symbol = [
     "@@      ",
     "@@@@@@  ",
     "@@    @@",
@@ -99,7 +99,7 @@ const LOWERCASE_H: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_I: Letter = [
+const LOWERCASE_I: Symbol = [
     "@@",
     "  ",
     "@@",
@@ -111,7 +111,7 @@ const LOWERCASE_I: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_J: Letter = [
+const LOWERCASE_J: Symbol = [
     "  @@",
     "    ",
     "  @@",
@@ -123,7 +123,7 @@ const LOWERCASE_J: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_K: Letter = [
+const LOWERCASE_K: Symbol = [
     "@@      ",
     "@@    @@",
     "@@@@@@  ",
@@ -135,7 +135,7 @@ const LOWERCASE_K: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_L: Letter = [
+const LOWERCASE_L: Symbol = [
     "@@",
     "@@",
     "@@",
@@ -147,7 +147,7 @@ const LOWERCASE_L: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_M: Letter = [
+const LOWERCASE_M: Symbol = [
     "          ",
     "@@@@@@@@  ",
     "@@  @@  @@",
@@ -159,7 +159,7 @@ const LOWERCASE_M: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_N: Letter = [
+const LOWERCASE_N: Symbol = [
     "        ",
     "@@@@@@  ",
     "@@    @@",
@@ -171,7 +171,7 @@ const LOWERCASE_N: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_O: Letter = [
+const LOWERCASE_O: Symbol = [
     "        ",
     "@@@@@@@@",
     "@@    @@",
@@ -183,7 +183,7 @@ const LOWERCASE_O: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_P: Letter = [
+const LOWERCASE_P: Symbol = [
     "        ",
     "@@@@@@@@",
     "@@    @@",
@@ -195,7 +195,7 @@ const LOWERCASE_P: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_Q: Letter = [
+const LOWERCASE_Q: Symbol = [
     "        ",
     "@@@@@@@@",
     "@@    @@",
@@ -207,7 +207,7 @@ const LOWERCASE_Q: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_R: Letter = [
+const LOWERCASE_R: Symbol = [
     "      ",
     "@@@@@@",
     "@@    ",
@@ -219,7 +219,7 @@ const LOWERCASE_R: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_S: Letter = [
+const LOWERCASE_S: Symbol = [
     "        ",
     "@@@@@@@@",
     "@@      ",
@@ -231,7 +231,7 @@ const LOWERCASE_S: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_T: Letter = [
+const LOWERCASE_T: Symbol = [
     "  @@  ",
     "@@@@@@",
     "  @@  ",
@@ -243,7 +243,7 @@ const LOWERCASE_T: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_U: Letter = [
+const LOWERCASE_U: Symbol = [
     "        ",
     "@@    @@",
     "@@    @@",
@@ -255,7 +255,7 @@ const LOWERCASE_U: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_V: Letter = [
+const LOWERCASE_V: Symbol = [
     "        ",
     "@@    @@",
     "@@    @@",
@@ -267,7 +267,7 @@ const LOWERCASE_V: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_W: Letter = [
+const LOWERCASE_W: Symbol = [
     "          ",
     "@@  @@  @@",
     "@@  @@  @@",
@@ -279,7 +279,7 @@ const LOWERCASE_W: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_X: Letter = [
+const LOWERCASE_X: Symbol = [
     "        ",
     "@@    @@",
     "@@    @@",
@@ -291,7 +291,7 @@ const LOWERCASE_X: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_Y: Letter = [
+const LOWERCASE_Y: Symbol = [
     "        ",
     "@@    @@",
     "@@    @@",
@@ -303,7 +303,7 @@ const LOWERCASE_Y: Letter = [
 ];
 
 #[rustfmt::skip]
-const LOWERCASE_Z: Letter = [
+const LOWERCASE_Z: Symbol = [
     "        ",
     "@@@@@@@@",
     "      @@",
@@ -317,7 +317,7 @@ const LOWERCASE_Z: Letter = [
 // Uppercase.
 
 #[rustfmt::skip]
-const UPPERCASE_A: Letter = [
+const UPPERCASE_A: Symbol = [
     "@@@@@@@@",
     "@@    @@",
     "@@    @@",
@@ -329,7 +329,7 @@ const UPPERCASE_A: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_B: Letter = [
+const UPPERCASE_B: Symbol = [
     "@@@@@@  ",
     "@@  @@  ",
     "@@@@@@@@",
@@ -341,7 +341,7 @@ const UPPERCASE_B: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_C: Letter = [
+const UPPERCASE_C: Symbol = [
     "@@@@@@@@",
     "@@      ",
     "@@      ",
@@ -353,7 +353,7 @@ const UPPERCASE_C: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_D: Letter = [
+const UPPERCASE_D: Symbol = [
     "@@@@@@  ",
     "@@    @@",
     "@@    @@",
@@ -365,7 +365,7 @@ const UPPERCASE_D: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_E: Letter = [
+const UPPERCASE_E: Symbol = [
     "@@@@@@@@",
     "@@      ",
     "@@@@@@  ",
@@ -377,7 +377,7 @@ const UPPERCASE_E: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_F: Letter = [
+const UPPERCASE_F: Symbol = [
     "@@@@@@@@",
     "@@      ",
     "@@@@@@  ",
@@ -389,7 +389,7 @@ const UPPERCASE_F: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_G: Letter = [
+const UPPERCASE_G: Symbol = [
     "@@@@@@@@",
     "@@      ",
     "@@      ",
@@ -401,7 +401,7 @@ const UPPERCASE_G: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_H: Letter = [
+const UPPERCASE_H: Symbol = [
     "@@    @@",
     "@@    @@",
     "@@@@@@@@",
@@ -413,7 +413,7 @@ const UPPERCASE_H: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_I: Letter = [
+const UPPERCASE_I: Symbol = [
     "@@@@",
     " @@ ",
     " @@ ",
@@ -425,7 +425,7 @@ const UPPERCASE_I: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_J: Letter = [
+const UPPERCASE_J: Symbol = [
     "      @@",
     "      @@",
     "      @@",
@@ -437,7 +437,7 @@ const UPPERCASE_J: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_K: Letter = [
+const UPPERCASE_K: Symbol = [
     "@@    @@",
     "@@    @@",
     "@@@@@@  ",
@@ -449,7 +449,7 @@ const UPPERCASE_K: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_L: Letter = [
+const UPPERCASE_L: Symbol = [
     "@@      ",
     "@@      ",
     "@@      ",
@@ -461,7 +461,7 @@ const UPPERCASE_L: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_M: Letter = [
+const UPPERCASE_M: Symbol = [
     "@@@@  @@@@",
     "@@  @@  @@",
     "@@  @@  @@",
@@ -473,7 +473,7 @@ const UPPERCASE_M: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_N: Letter = [
+const UPPERCASE_N: Symbol = [
     "@@      @@",
     "@@@@    @@",
     "@@  @@  @@",
@@ -485,7 +485,7 @@ const UPPERCASE_N: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_O: Letter = [
+const UPPERCASE_O: Symbol = [
     "@@@@@@@@",
     "@@    @@",
     "@@    @@",
@@ -497,7 +497,7 @@ const UPPERCASE_O: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_P: Letter = [
+const UPPERCASE_P: Symbol = [
     "@@@@@@@@",
     "@@    @@",
     "@@    @@",
@@ -509,7 +509,7 @@ const UPPERCASE_P: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_Q: Letter = [
+const UPPERCASE_Q: Symbol = [
     "@@@@@@@@  ",
     "@@    @@  ",
     "@@    @@  ",
@@ -521,7 +521,7 @@ const UPPERCASE_Q: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_R: Letter = [
+const UPPERCASE_R: Symbol = [
     "@@@@@@  ",
     "@@    @@",
     "@@    @@",
@@ -533,7 +533,7 @@ const UPPERCASE_R: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_S: Letter = [
+const UPPERCASE_S: Symbol = [
     "@@@@@@@@",
     "@@      ",
     "@@@@@@@@",
@@ -545,7 +545,7 @@ const UPPERCASE_S: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_T: Letter = [
+const UPPERCASE_T: Symbol = [
     "@@@@@@@@",
     "   @@   ",
     "   @@   ",
@@ -557,7 +557,7 @@ const UPPERCASE_T: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_U: Letter = [
+const UPPERCASE_U: Symbol = [
     "@@    @@",
     "@@    @@",
     "@@    @@",
@@ -569,7 +569,7 @@ const UPPERCASE_U: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_V: Letter = [
+const UPPERCASE_V: Symbol = [
     "@@    @@",
     "@@    @@",
     "@@    @@",
@@ -581,7 +581,7 @@ const UPPERCASE_V: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_W: Letter = [
+const UPPERCASE_W: Symbol = [
     "@@   @@   @@",
     "@@   @@   @@",
     "@@   @@   @@",
@@ -593,7 +593,7 @@ const UPPERCASE_W: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_X: Letter = [
+const UPPERCASE_X: Symbol = [
     "@@    @@",
     "@@    @@",
     "  @@@@  ",
@@ -605,7 +605,7 @@ const UPPERCASE_X: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_Y: Letter = [
+const UPPERCASE_Y: Symbol = [
     "@@    @@",
     "@@    @@",
     "@@    @@",
@@ -617,7 +617,7 @@ const UPPERCASE_Y: Letter = [
 ];
 
 #[rustfmt::skip]
-const UPPERCASE_Z: Letter = [
+const UPPERCASE_Z: Symbol = [
     "@@@@@@@@",
     "      @@",
     "    @@  ",
@@ -630,7 +630,7 @@ const UPPERCASE_Z: Letter = [
 
 // Put here punctuation and symbols i.e. $, #, @ etc.
 #[rustfmt::skip]
-const SPACE: Letter = [
+const SPACE: Symbol = [
     "      ",
     "      ",
     "      ",
@@ -642,7 +642,7 @@ const SPACE: Letter = [
 ];
 
 #[rustfmt::skip]
-const PERIOD: Letter = [
+const PERIOD: Symbol = [
     "  ",
     "  ",
     "  ",
@@ -654,7 +654,7 @@ const PERIOD: Letter = [
 ];
 
 #[rustfmt::skip]
-const QUESTION_MARK: Letter = [
+const QUESTION_MARK: Symbol = [
     "        ",
     "  @@@@  ",
     "@@    @@",
@@ -666,7 +666,7 @@ const QUESTION_MARK: Letter = [
 ];
 
 #[rustfmt::skip]
-pub const UNKNOWN: Letter = [
+pub const UNKNOWN: Symbol = [
     "  @@@@@@  ",
     "@@@    @@@",
     "@  @@@@  @",
@@ -677,7 +677,7 @@ pub const UNKNOWN: Letter = [
     "  @@@@@@  ",
 ];
 
-pub fn get_symbols() -> HashMap<char, Letter> {
+pub fn get_symbols() -> HashMap<char, Symbol> {
     HashMap::from([
         //
         // Lowercase.
@@ -744,4 +744,91 @@ pub fn get_symbols() -> HashMap<char, Letter> {
         ('.', PERIOD),
         ('?', QUESTION_MARK),
     ])
+}
+
+pub struct Glyph {
+    symbol: Vec<String>,
+}
+
+impl Glyph {
+    pub fn new(symbol: Symbol) -> Glyph {
+        let mut lines = Vec::new();
+        for line in symbol {
+            lines.push(String::from(line));
+        }
+        Glyph { symbol: lines }
+    }
+
+    pub fn len(&self) -> usize {
+        self.symbol.len()
+    }
+
+    pub fn get(&self, n: usize) -> String {
+        if n >= self.symbol.len() {
+            panic!("!!!")
+        } else {
+            self.symbol[n].replace("@", "█")
+        }
+    }
+
+    pub fn to_small_glyph(&self) -> Glyph {
+        const TOP_LEFT: &str = "@   ";
+        const TOP_RIGHT: &str = " @  ";
+        const BOT_LEFT: &str = "  @ ";
+        const BOT_RIGHT: &str = "   @";
+        const TOP_LEFT_AND_BOT_RIGHT: &str = "@  @";
+        const TOP_RIGHT_AND_BOT_LEFT: &str = " @@ ";
+        const TOP_HALF: &str = "@@  ";
+        const BOT_HALF: &str = "  @@";
+        const LEFT_HALF: &str = "@ @ ";
+        const RIGHT_HALF: &str = " @ @";
+        const FULL_BLOCK: &str = "@@@@";
+        const EMPTY_BLOCK: &str = "    ";
+        const MINUS_TOP_LEFT: &str = " @@@";
+        const MINUS_TOP_RIGHT: &str = "@ @@";
+        const MINUS_BOT_LEFT: &str = "@@ @";
+        const MINUS_BOT_RIGHT: &str = "@@@ ";
+
+        let block_map = HashMap::from([
+            (TOP_LEFT, '▘'),
+            (TOP_RIGHT, '▝'),
+            (BOT_LEFT, '▖'),
+            (BOT_RIGHT, '▗'),
+            (TOP_LEFT_AND_BOT_RIGHT, '▚'),
+            (TOP_RIGHT_AND_BOT_LEFT, '▞'),
+            (TOP_HALF, '▀'),
+            (BOT_HALF, '▄'),
+            (LEFT_HALF, '▌'),
+            (RIGHT_HALF, '▐'),
+            (FULL_BLOCK, '█'),
+            (EMPTY_BLOCK, ' '),
+            (MINUS_TOP_LEFT, '▟'),
+            (MINUS_TOP_RIGHT, '▙'),
+            (MINUS_BOT_LEFT, '▜'),
+            (MINUS_BOT_RIGHT, '▛'),
+        ]);
+
+        let mut lines = Vec::new();
+
+        for i in (0..self.symbol.len()).step_by(2) {
+            let line1: Vec<char> = self.symbol[i].chars().collect();
+            let line2: Vec<char> = self.symbol[i + 1].chars().collect();
+
+            let mut next_line = String::new();
+
+            for j in (0..line1.len()).step_by(2) {
+                let mut key = String::new();
+                key.push(line1[j]);
+                key.push(line1[j + 1]);
+                key.push(line2[j]);
+                key.push(line2[j + 1]);
+
+                next_line.push(block_map[key.as_str()]);
+            }
+
+            lines.push(next_line);
+        }
+
+        Glyph { symbol: lines }
+    }
 }
