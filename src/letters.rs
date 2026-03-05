@@ -647,34 +647,82 @@ const PERIOD: Symbol = [
     "  ",
     "  ",
     "  ",
-    "@@",
+    "  ",
     "@@",
     "  ",
+    "  ",
+];
+
+#[rustfmt::skip]
+const COMMA: Symbol = [
+    "  ",
+    "  ",
+    "  ",
+    "  ",
+    "  ",
+    "@@",
+    " @",
+    "  ",
+];
+
+#[rustfmt::skip]
+const COLON: Symbol = [
+    "  ",
+    "  ",
+    "@@",
+    "  ",
+    "  ",
+    "@@",
+    "  ",
+    "  ",
+];
+
+#[rustfmt::skip]
+const SEMICOLON: Symbol = [
+    "  ",
+    "  ",
+    "@@",
+    "  ",
+    "  ",
+    "@@",
+    " @",
     "  ",
 ];
 
 #[rustfmt::skip]
 const QUESTION_MARK: Symbol = [
-    "        ",
-    "  @@@@  ",
+    "@@@@@@@@",
     "@@    @@",
-    "     @@ ",
-    "   @@   ",
+    "      @@",
+    "   @@@  ",
     "        ",
     "   @@   ",
+    "        ",
     "        ",
 ];
 
 #[rustfmt::skip]
+const EXCLAMATION_MARK: Symbol = [
+    "@@",
+    "@@",
+    "@@",
+    "@@",
+    "  ",
+    "@@",
+    "  ",
+    "  ",
+];
+
+#[rustfmt::skip]
 pub const UNKNOWN: Symbol = [
-    "  @@@@@@  ",
-    "@@@    @@@",
-    "@  @@@@  @",
-    "@@@@@@  @@",
-    "@@@@  @@@@",
-    "@@@@@@@@@@",
-    "@@@@  @@@@",
-    "  @@@@@@  ",
+    "        ",
+    "@@@@@@@@",
+    "@      @",
+    "@      @",
+    "@      @",
+    "@      @",
+    "@@@@@@@@",
+    "        ",
 ];
 
 pub fn get_symbols() -> HashMap<char, Symbol> {
@@ -742,7 +790,11 @@ pub fn get_symbols() -> HashMap<char, Symbol> {
         //
         (' ', SPACE),
         ('.', PERIOD),
+        (',', COMMA),
+        (':', COLON),
+        (';', SEMICOLON),
         ('?', QUESTION_MARK),
+        ('!', EXCLAMATION_MARK),
     ])
 }
 

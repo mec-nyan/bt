@@ -43,5 +43,5 @@ fn main() {
         println!();
     }
 
-    println!("::{msg}");
+    println!("You've printed: '{msg}'");
 }
