@@ -714,6 +714,222 @@ const EXCLAMATION_MARK: Symbol = [
 ];
 
 #[rustfmt::skip]
+const APOSTROPHE: Symbol = [
+    "@@",
+    "@@",
+    "  ",
+    "  ",
+    "  ",
+    "  ",
+    "  ",
+    "  ",
+];
+
+#[rustfmt::skip]
+const QUOTES: Symbol = [
+    "@@  @@",
+    "@@  @@",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+    "      ",
+];
+
+#[rustfmt::skip]
+const OPENING_BRACKET: Symbol = [
+    "@@@@",
+    "@@  ",
+    "@@  ",
+    "@@  ",
+    "@@  ",
+    "@@  ",
+    "@@@@",
+    "    ",
+];
+
+#[rustfmt::skip]
+const CLOSING_BRACKET: Symbol = [
+    "@@@@",
+    "  @@",
+    "  @@",
+    "  @@",
+    "  @@",
+    "  @@",
+    "@@@@",
+    "    ",
+];
+
+#[rustfmt::skip]
+const OPENING_CURLY_BRACE: Symbol = [
+    "    @@",
+    "  @@  ",
+    "  @@  ",
+    "@@    ",
+    "  @@  ",
+    "  @@  ",
+    "    @@",
+    "        ",
+];
+
+#[rustfmt::skip]
+const CLOSING_CURLY_BRACE: Symbol = [
+    "@@    ",
+    "  @@  ",
+    "  @@  ",
+    "    @@",
+    "  @@  ",
+    "  @@  ",
+    "@@    ",
+    "      ",
+];
+
+#[rustfmt::skip]
+const OPENING_PARENTHESIS: Symbol = [
+    "  @@",
+    "@@  ",
+    "@@  ",
+    "@@  ",
+    "@@  ",
+    "@@  ",
+    "  @@",
+    "    ",
+];
+
+#[rustfmt::skip]
+const CLOSING_PARENTHESIS: Symbol = [
+    "@@  ",
+    "  @@",
+    "  @@",
+    "  @@",
+    "  @@",
+    "  @@",
+    "@@  ",
+    "    ",
+];
+
+#[rustfmt::skip]
+const ZERO: Symbol = [
+    "  @@@@  ",
+    "@@    @@",
+    "@@    @@",
+    "@@    @@",
+    "@@    @@",
+    "  @@@@  ",
+    "        ",
+    "        ",
+];
+
+#[rustfmt::skip]
+const ONE: Symbol = [
+    "  @@",
+    "@@@@",
+    "  @@",
+    "  @@",
+    "  @@",
+    "  @@",
+    "    ",
+    "    ",
+];
+
+#[rustfmt::skip]
+const TWO: Symbol = [
+    "@@@@@@@@",
+    "      @@",
+    "      @@",
+    "  @@@@  ",
+    "@@      ",
+    "@@@@@@@@",
+    "        ",
+    "        ",
+];
+
+#[rustfmt::skip]
+const THREE: Symbol = [
+    "@@@@@@@@",
+    "      @@",
+    "@@@@@@@@",
+    "      @@",
+    "      @@",
+    "@@@@@@@@",
+    "        ",
+    "        ",
+];
+
+#[rustfmt::skip]
+const FOUR: Symbol = [
+    "@@    @@",
+    "@@    @@",
+    "@@    @@",
+    "@@@@@@@@",
+    "      @@",
+    "      @@",
+    "        ",
+    "        ",
+];
+
+#[rustfmt::skip]
+const FIVE: Symbol = [
+    "@@@@@@@@",
+    "@@      ",
+    "@@@@@@@@",
+    "      @@",
+    "      @@",
+    "@@@@@@@@",
+    "        ",
+    "        ",
+];
+
+#[rustfmt::skip]
+const SIX: Symbol = [
+    "@@      ",
+    "@@      ",
+    "@@@@@@@@",
+    "@@    @@",
+    "@@    @@",
+    "@@@@@@@@",
+    "        ",
+    "        ",
+];
+
+#[rustfmt::skip]
+const SEVEN: Symbol = [
+    "@@@@@@@@",
+    "      @@",
+    "      @@",
+    "      @@",
+    "      @@",
+    "      @@",
+    "        ",
+    "        ",
+];
+
+#[rustfmt::skip]
+const EIGHT: Symbol = [
+    "@@@@@@@@",
+    "@@    @@",
+    "@@@@@@@@",
+    "@@    @@",
+    "@@    @@",
+    "@@@@@@@@",
+    "        ",
+    "        ",
+];
+
+#[rustfmt::skip]
+const NINE: Symbol = [
+    "@@@@@@@@",
+    "@@    @@",
+    "@@    @@",
+    "@@@@@@@@",
+    "      @@",
+    "      @@",
+    "        ",
+    "        ",
+];
+
+#[rustfmt::skip]
 pub const UNKNOWN: Symbol = [
     "        ",
     "@@@@@@@@",
@@ -795,11 +1011,40 @@ pub fn get_symbols() -> HashMap<char, Symbol> {
         (';', SEMICOLON),
         ('?', QUESTION_MARK),
         ('!', EXCLAMATION_MARK),
+        ('\'', APOSTROPHE),
+        ('"', QUOTES),
+        ('[', OPENING_BRACKET),
+        (']', CLOSING_BRACKET),
+        ('(', OPENING_PARENTHESIS),
+        (')', CLOSING_PARENTHESIS),
+        ('{', OPENING_CURLY_BRACE),
+        ('}', CLOSING_CURLY_BRACE),
+        ('0', ZERO),
+        ('1', ONE),
+        ('2', TWO),
+        ('3', THREE),
+        ('4', FOUR),
+        ('5', FIVE),
+        ('6', SIX),
+        ('7', SEVEN),
+        ('8', EIGHT),
+        ('9', NINE),
     ])
 }
 
 pub struct Glyph {
     symbol: Vec<String>,
+}
+
+pub enum XOffset {
+    Zero,
+    One,
+    Two,
+}
+
+pub enum YOffset {
+    Zero,
+    One,
 }
 
 impl Glyph {
@@ -823,8 +1068,22 @@ impl Glyph {
         }
     }
 
-    pub fn with_shadow(&self, _x_offset: i8, _y_offset: i8) -> Glyph {
-        // First example with x_offset: 1 and y_offset: 1.
+    pub fn with_shadow(&self, x_offset: XOffset, y_offset: YOffset) -> Glyph {
+        // For now: x can be 0, 1 or 2; y can be either 0 or 1.
+        let y;
+        let x;
+
+        match x_offset {
+            XOffset::Zero => x = 0,
+            XOffset::One => x = 1,
+            XOffset::Two => x = 2,
+        }
+
+        match y_offset {
+            YOffset::Zero => y = 0,
+            YOffset::One => y = 1,
+        }
+
         let mut map: Vec<Vec<char>> = Vec::new();
 
         for line in &self.symbol {
@@ -835,16 +1094,18 @@ impl Glyph {
             map.push(chars);
         }
 
-        for line in &mut map {
-            line.push(' ');
-            line.push(' ');
+        if x != 0 {
+            for line in &mut map {
+                line.push(' ');
+                line.push(' ');
+            }
         }
 
         for row in 0..map.len() - 1 {
             for col in 0..map[0].len() - 2 {
                 if map[row][col] == '@' {
-                    let shadow_x = col + 1;
-                    let shadow_y = row + 1;
+                    let shadow_x = col + x;
+                    let shadow_y = row + y;
                     if map[shadow_y][shadow_x] == ' ' {
                         map[shadow_y][shadow_x] = '.';
                     }
