@@ -819,8 +819,49 @@ impl Glyph {
         if n >= self.symbol.len() {
             panic!("!!!")
         } else {
-            self.symbol[n].replace("@", "█")
+            self.symbol[n].replace("@", "█").replace(".", "░")
         }
+    }
+
+    pub fn with_shadow(&self, _x_offset: i8, _y_offset: i8) -> Glyph {
+        // First example with x_offset: 1 and y_offset: 1.
+        let mut map: Vec<Vec<char>> = Vec::new();
+
+        for line in &self.symbol {
+            let mut chars = Vec::new();
+            for c in line.chars() {
+                chars.push(c);
+            }
+            map.push(chars);
+        }
+
+        for line in &mut map {
+            line.push(' ');
+            line.push(' ');
+        }
+
+        for row in 0..map.len() - 1 {
+            for col in 0..map[0].len() - 2 {
+                if map[row][col] == '@' {
+                    let shadow_x = col + 1;
+                    let shadow_y = row + 1;
+                    if map[shadow_y][shadow_x] == ' ' {
+                        map[shadow_y][shadow_x] = '.';
+                    }
+                }
+            }
+        }
+
+        let mut lines = Vec::new();
+        for line in map {
+            let mut s = String::new();
+            for ch in line {
+                s.push(ch);
+            }
+            lines.push(s);
+        }
+
+        Glyph { symbol: lines }
     }
 
     pub fn to_small_glyph(&self) -> Glyph {

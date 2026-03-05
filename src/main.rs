@@ -18,11 +18,11 @@ fn main() {
         big_words.push(Glyph::new(*key_map.get(&ch).unwrap_or(&UNKNOWN)));
     }
 
-    let spacing = "  ";
+    let spacing = "";
 
     for n in 0..big_words[0].len() {
         for glyph in &big_words {
-            print!("{}{}", glyph.get(n), spacing);
+            print!("{}{}", glyph.with_shadow(0, 0).get(n), spacing);
         }
         println!();
     }
